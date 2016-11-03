@@ -11,8 +11,9 @@ export class HeroService {
     /*getHeroes(): Promise<Hero[]> {
         return Promise.resolve(HEROES);
     }*/
-
-    constructor(private http: Http, private heroesUrl) {
+    private headers = new Headers({ 'Content-Type': 'application/json' });
+    heroesUrl = '';
+    constructor(private http: Http) {
         this.heroesUrl = 'app/heroes';
     }
     getHeroes(): Promise<Hero[]> {
@@ -36,5 +37,15 @@ export class HeroService {
     handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
+    }
+
+
+    update(hero: Hero): Promise<Hero> {
+        const url = `${this.heroesUrl}/${hero.id}`;
+        return this.http
+            .put(url, JSON.stringify(hero), { headers: this.headers })
+            .toPromise()
+            .then(() => hero)
+            .catch(this.handleError);
     }
 }

@@ -13,12 +13,13 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var HeroService = (function () {
-    /*getHeroes(): Promise<Hero[]> {
-        return Promise.resolve(HEROES);
-    }*/
-    function HeroService(http, heroesUrl) {
+    function HeroService(http) {
         this.http = http;
-        this.heroesUrl = heroesUrl;
+        /*getHeroes(): Promise<Hero[]> {
+            return Promise.resolve(HEROES);
+        }*/
+        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        this.heroesUrl = '';
         this.heroesUrl = 'app/heroes';
     }
     HeroService.prototype.getHeroes = function () {
@@ -42,9 +43,17 @@ var HeroService = (function () {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
+    HeroService.prototype.update = function (hero) {
+        var url = this.heroesUrl + "/" + hero.id;
+        return this.http
+            .put(url, JSON.stringify(hero), { headers: this.headers })
+            .toPromise()
+            .then(function () { return hero; })
+            .catch(this.handleError);
+    };
     HeroService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, Object])
+        __metadata('design:paramtypes', [http_1.Http])
     ], HeroService);
     return HeroService;
 }());
