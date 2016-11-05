@@ -34,6 +34,32 @@ var HeroesComponent = (function () {
         var link = ['/detail', this.selectedHero.id];
         this.router.navigate(link);
     };
+    HeroesComponent.prototype.add = function (name) {
+        var _this = this;
+        name = name.trim();
+        if (!name) {
+            return;
+        }
+        if (this.heroes.find(function (h) { return h.name == name; })) {
+            alert("Hero is already exist!");
+            return;
+        }
+        this.heroService.create(name)
+            .then(function (hero) {
+            _this.heroes.push(hero);
+            _this.selectedHero = null;
+        });
+    };
+    HeroesComponent.prototype.delete = function (hero) {
+        var _this = this;
+        this.heroService.delete(hero.id)
+            .then(function () {
+            _this.heroes = _this.heroes.filter(function (h) { return h !== hero; });
+            if (_this.selectedHero === hero) {
+                _this.selectedHero = null;
+            }
+        });
+    };
     HeroesComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
