@@ -20,7 +20,9 @@ var heroes_component_1 = require('./heroes.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var hero_service_1 = require('./hero.service');
 var dashboard_component_1 = require('./dashboard.component');
+var hero_search_component_1 = require('./hero-search.component');
 var app_routing_module_1 = require('./app-routing.module');
+require('./rxjs-extensions');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,7 +35,13 @@ var AppModule = (function () {
                 angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
                 app_routing_module_1.AppRoutingModule
             ],
-            declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, heroes_component_1.HeroesComponent, hero_detail_component_1.HeroDetailComponent],
+            declarations: [
+                app_component_1.AppComponent,
+                dashboard_component_1.DashboardComponent,
+                heroes_component_1.HeroesComponent,
+                hero_detail_component_1.HeroDetailComponent,
+                hero_search_component_1.HeroSearchComponent
+            ],
             bootstrap: [app_component_1.AppComponent],
             providers: [hero_service_1.HeroService]
         }), 
