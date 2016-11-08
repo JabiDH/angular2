@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var hero_service_1 = require('./hero.service');
+var heroapi_service_1 = require('./heroapi.service');
 var HeroesComponent = (function () {
-    function HeroesComponent(heroService, router) {
+    function HeroesComponent(heroService, heroapiService, router) {
         this.heroService = heroService;
+        this.heroapiService = heroapiService;
         this.router = router;
     }
     HeroesComponent.prototype.onSelect = function (hero) {
@@ -23,12 +25,22 @@ var HeroesComponent = (function () {
         var _this = this;
         this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
     };
+    HeroesComponent.prototype.getAllHeroes = function () {
+        var _this = this;
+        this.heroapiService.getHeroes().subscribe(function (heroes) {
+            _this.heroes = heroes;
+        }, function (err) {
+            console.log('heroes : ' + _this.heroes);
+            console.log('heroes.component.ts -> getAllHeroes() -> ' + err);
+        });
+    };
     HeroesComponent.prototype.getHeroesSlowly = function () {
         var _this = this;
-        this.heroService.getHeroesSlowly().then(function (heroes) { return _this.heroes = heroes; });
+        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
     };
     HeroesComponent.prototype.ngOnInit = function () {
-        this.getHeroes();
+        this.getAllHeroes();
+        //this.search('car');
     };
     HeroesComponent.prototype.gotoDetail = function () {
         var link = ['/detail', this.selectedHero.id];
@@ -60,6 +72,9 @@ var HeroesComponent = (function () {
             }
         });
     };
+    HeroesComponent.prototype.search = function (term) {
+        this.heroapiService.search(term).subscribe(function (res) { return console.log(res); }, function (err) { return console.log(err); });
+    };
     HeroesComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
@@ -67,7 +82,7 @@ var HeroesComponent = (function () {
             templateUrl: 'heroes.component.html',
             styleUrls: ['heroes.component.css']
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])
+        __metadata('design:paramtypes', [hero_service_1.HeroService, heroapi_service_1.HeroapiService, router_1.Router])
     ], HeroesComponent);
     return HeroesComponent;
 }());
