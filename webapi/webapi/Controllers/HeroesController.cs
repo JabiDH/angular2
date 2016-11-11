@@ -16,16 +16,8 @@ namespace webapi.Controllers
         {
             var heroes = new List<Hero>();
             heroes.Add(new Hero { id = 1, name = "Hero_01" });
-            heroes.Add(new Hero { id = 2, name = "Hero_02" });
-
-            StringBuilder sb = new StringBuilder();
-            //JavaScriptSerializer js = new JavaScriptSerializer();
-            sb.Append(callback + "(");
-            sb.Append(System.Web.Helpers.Json.Encode(heroes));
-            sb.Append(");");  
-
-
-            return Ok(sb.ToString());
+            heroes.Add(new Hero { id = 2, name = "Hero_02" });            
+            return Ok(heroes);
         }
 
         // GET api/heroes/5

@@ -12,7 +12,7 @@ export class HeroapiService {
     private heroapiUrl = '';
 
     constructor(private http: Http, private jsonp: Jsonp) {
-        this.heroapiUrl = "http://localhost:62064/api/heroes/";
+        this.heroapiUrl = "http://localhost:5000/api/values/";
         //this.headers = new Headers();
         //this.headers.append('Content-Type', 'application/json');
         //this.headers.append('Access-Control-Allow-Origin', '*');
@@ -35,8 +35,8 @@ export class HeroapiService {
         params.set('callback', 'JSONP_CALLBACK');
         let callbackOptions = new RequestOptions({ search: params, method: 'GET' });
         return this.jsonp
-            .request(this.heroapiUrl, callbackOptions)
-            .map(response => response.json().data as Hero[])
+            .get(this.heroapiUrl, callbackOptions)
+            .map(response => response.json()[1])
             .catch((err: any) => {
                 console.log(err);
                 return Observable.throw(err.json().error || 'Server Error')

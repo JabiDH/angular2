@@ -19,7 +19,7 @@ var HeroapiService = (function () {
         this.http = http;
         this.jsonp = jsonp;
         this.heroapiUrl = '';
-        this.heroapiUrl = "http://localhost:62064/api/heroes/";
+        this.heroapiUrl = "http://localhost:5000/api/values/";
         //this.headers = new Headers();
         //this.headers.append('Content-Type', 'application/json');
         //this.headers.append('Access-Control-Allow-Origin', '*');
@@ -35,8 +35,8 @@ var HeroapiService = (function () {
         params.set('callback', 'JSONP_CALLBACK');
         var callbackOptions = new http_1.RequestOptions({ search: params, method: 'GET' });
         return this.jsonp
-            .request(this.heroapiUrl, callbackOptions)
-            .map(function (response) { return response.json().data; })
+            .get(this.heroapiUrl, callbackOptions)
+            .map(function (response) { return response.json()[1]; })
             .catch(function (err) {
             console.log(err);
             return Rx_1.Observable.throw(err.json().error || 'Server Error');
