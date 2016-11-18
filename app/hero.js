@@ -1,8 +1,8 @@
 "use strict";
 var Hero = (function () {
-    function Hero(id, name) {
-        this.id = id;
-        this.name = name;
+    function Hero(Id, Name) {
+        this.Id = Id;
+        this.Name = Name;
     }
     return Hero;
 }());

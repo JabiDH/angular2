@@ -29,6 +29,7 @@ var HeroesComponent = (function () {
         var _this = this;
         this.heroapiService.getHeroes().subscribe(function (heroes) {
             _this.heroes = heroes;
+            console.log(heroes);
         }, function (err) {
             console.log('heroes : ' + _this.heroes);
             console.log('heroes.component.ts -> getAllHeroes() -> ' + err);
@@ -43,7 +44,7 @@ var HeroesComponent = (function () {
         //this.search('car');
     };
     HeroesComponent.prototype.gotoDetail = function () {
-        var link = ['/detail', this.selectedHero.id];
+        var link = ['/detail', this.selectedHero.Id];
         this.router.navigate(link);
     };
     HeroesComponent.prototype.add = function (name) {
@@ -52,7 +53,7 @@ var HeroesComponent = (function () {
         if (!name) {
             return;
         }
-        if (this.heroes.find(function (h) { return h.name == name; })) {
+        if (this.heroes.find(function (h) { return h.Name == name; })) {
             alert("Hero is already exist!");
             return;
         }
@@ -64,7 +65,7 @@ var HeroesComponent = (function () {
     };
     HeroesComponent.prototype.delete = function (hero) {
         var _this = this;
-        this.heroService.delete(hero.id)
+        this.heroService.delete(hero.Id)
             .then(function () {
             _this.heroes = _this.heroes.filter(function (h) { return h !== hero; });
             if (_this.selectedHero === hero) {

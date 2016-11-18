@@ -31,7 +31,7 @@ export class HeroService {
 
     getHero(id: number): Promise<Hero> {
         return this.getHeroes()
-            .then(heroes => heroes.find(hero => hero.id === id));
+            .then(heroes => heroes.find(hero => hero.Id === id));
     }
 
     handleError(error: any): Promise<any> {
@@ -41,7 +41,7 @@ export class HeroService {
 
 
     update(hero: Hero): Promise<Hero> {
-        const url = `${this.heroesUrl}/${hero.id}`;
+        const url = `${this.heroesUrl}/${hero.Id}`;
         return this.http
             .put(url, JSON.stringify(hero), { headers: this.headers })
             .toPromise()

@@ -24,7 +24,7 @@ var DashboardComponent = (function () {
             .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
     };
     DashboardComponent.prototype.gotoDetail = function (hero) {
-        var link = ['/detail', hero.id];
+        var link = ['/detail', hero.Id];
         this.router.navigate(link);
     };
     DashboardComponent = __decorate([

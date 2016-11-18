@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webapiangular2", "webapiangular2\webapiangular2.csproj", "{6E77F2BC-9744-408C-805C-CEC6450F2A51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webapiangular2.Tests", "webapiangular2.Tests\webapiangular2.Tests.csproj", "{4908EA48-E6F1-4846-B76E-EB3BB28E122E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E77F2BC-9744-408C-805C-CEC6450F2A51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E77F2BC-9744-408C-805C-CEC6450F2A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E77F2BC-9744-408C-805C-CEC6450F2A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E77F2BC-9744-408C-805C-CEC6450F2A51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4908EA48-E6F1-4846-B76E-EB3BB28E122E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4908EA48-E6F1-4846-B76E-EB3BB28E122E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4908EA48-E6F1-4846-B76E-EB3BB28E122E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4908EA48-E6F1-4846-B76E-EB3BB28E122E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

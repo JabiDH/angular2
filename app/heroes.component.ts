@@ -35,8 +35,9 @@ export class HeroesComponent implements OnInit {
   }
   getAllHeroes(): void {
     this.heroapiService.getHeroes().subscribe(
-      heroes => {
+      heroes => {        
         this.heroes = heroes
+        console.log(heroes);
       },
       err => {
         console.log('heroes : ' + this.heroes);
@@ -54,13 +55,13 @@ export class HeroesComponent implements OnInit {
     //this.search('car');
   }
   gotoDetail(): void {
-    let link = ['/detail', this.selectedHero.id];
+    let link = ['/detail', this.selectedHero.Id];
     this.router.navigate(link);
   }
   add(name: string) {
     name = name.trim();
     if (!name) { return; }
-    if (this.heroes.find(h => h.name == name)) { alert("Hero is already exist!"); return; }
+    if (this.heroes.find(h => h.Name == name)) { alert("Hero is already exist!"); return; }
     this.heroService.create(name)
       .then(hero => {
         this.heroes.push(hero);
@@ -68,7 +69,7 @@ export class HeroesComponent implements OnInit {
       })
   }
   delete(hero: Hero): void {
-    this.heroService.delete(hero.id)
+    this.heroService.delete(hero.Id)
       .then(() => {
         this.heroes = this.heroes.filter(h => h !== hero);
         if (this.selectedHero === hero) {

@@ -37,14 +37,14 @@ var HeroService = (function () {
     };
     HeroService.prototype.getHero = function (id) {
         return this.getHeroes()
-            .then(function (heroes) { return heroes.find(function (hero) { return hero.id === id; }); });
+            .then(function (heroes) { return heroes.find(function (hero) { return hero.Id === id; }); });
     };
     HeroService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
     HeroService.prototype.update = function (hero) {
-        var url = this.heroesUrl + "/" + hero.id;
+        var url = this.heroesUrl + "/" + hero.Id;
         return this.http
             .put(url, JSON.stringify(hero), { headers: this.headers })
             .toPromise()
