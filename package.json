@@ -37,5 +37,17 @@
     "concurrently": "^3.0.0",
     "lite-server": "^2.2.2",
     "typescript": "^2.0.3"
-  }
+  },
+  "main": "systemjs.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JabiDH/angular2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JabiDH/angular2/issues"
+  },
+  "homepage": "https://github.com/JabiDH/angular2#readme",
+  "description": ""
 }

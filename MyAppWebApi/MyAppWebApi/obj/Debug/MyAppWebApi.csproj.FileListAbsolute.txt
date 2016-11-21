@@ -1,0 +1,16 @@
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\bin\MyAppWebApi.dll.config
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\bin\MyAppWebApi.dll
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\bin\MyAppWebApi.pdb
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\bin\Newtonsoft.Json.dll
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\bin\System.Net.Http.Formatting.dll
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\bin\System.Web.Http.dll
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\bin\System.Web.Http.WebHost.dll
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\bin\WebApiContrib.Formatting.Jsonp.dll
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\bin\Newtonsoft.Json.xml
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\bin\System.Net.Http.Formatting.xml
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\bin\System.Web.Http.xml
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\bin\System.Web.Http.WebHost.xml
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\bin\WebApiContrib.Formatting.Jsonp.pdb
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\obj\Debug\MyAppWebApi.csprojResolveAssemblyReference.cache
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\obj\Debug\MyAppWebApi.dll
+C:\Users\gabih\Documents\Visual Studio 2013\Projects\angular2\myapp\MyAppWebApi\MyAppWebApi\obj\Debug\MyAppWebApi.pdb

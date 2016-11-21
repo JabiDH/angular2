@@ -12,7 +12,7 @@ export class HeroapiService {
     private heroapiUrl = '';
 
     constructor(private http: Http, private jsonp: Jsonp) {
-        this.heroapiUrl = "http://localhost:62412/api/heroes";
+        this.heroapiUrl = "http://localhost:58843/api/heroes";
         //this.headers = new Headers();
         //this.headers.append('Content-Type', 'application/json');
         //this.headers.append('Access-Control-Allow-Origin', '*');
